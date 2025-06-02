@@ -1,0 +1,28 @@
+Klipper's Documentation Reference:
+<a href="https://www.klipper3d.org/Rotation_Distance.html">https://www.klipper3d.org/Rotation_Distance.html</a><br>
+Please note that this helper is <strong>only for extruder steppers</strong>! No calculations here take in consideration X, Y and Z steppers!
+For that please check the link above for more info!
+<br><br>
+
+<button type="button" (click)="toggleRotationDistanceCalc()">Calculate new rotation_distance</button>
+&nbsp;
+<button type="button" (click)="toggleEStepConverter()">Convert/Calculate E-Steps/mm (steps_per_mm) to rotation_distance</button>
+&nbsp;
+<button type="button" (click)="toggleStepDistanceToRotationDistance()">Convert/Calculate deprecated step_distance to new rotation_distance</button>
+<br><br>
+
+<div class="section" *ngIf="showRotationDistanceCalc" [@accordion]>
+  <app-rotation-distance-calculator></app-rotation-distance-calculator>
+</div>
+
+<div class="section" *ngIf="showEStepConverter" [@accordion]>
+  <app-estep-rotation-distance-converter></app-estep-rotation-distance-converter>
+</div>
+
+<div class="section" *ngIf="showStepDistanceToRotationDistance" [@accordion]>
+  <app-step-distance-to-rotation-distance></app-step-distance-to-rotation-distance>
+</div>
+
+<br><br>
+If in doubt, please check Klipper's docs at the top of the page! <br>
+Developed by <a href="https://github.com/pedromorais486/klipper_extruder_helper">@pedromorais486</a>

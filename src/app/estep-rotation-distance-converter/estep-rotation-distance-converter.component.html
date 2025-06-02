@@ -1,0 +1,29 @@
+What are your stepper's rotation degrees? (If unsure, leave as is. Most common is 1.8)<br>
+<input [(ngModel)]="stepper_degrees" placeholder="Whole number, eg.: 200" />
+<pre class="variable">stepper_degrees</pre>
+<br><br>
+
+<button type="button" (click)="calculateFullStepsPerRotation()">Calculate full_steps_per_rotation</button>
+<br><br>
+
+Full steps per rotation of your stepper motor: (Most common is 200, for 1.8 degree motors - this value is auto-calculated!) <br>
+<input [(ngModel)]="full_steps_per_rotation" placeholder="Autocalculated value..." readonly/>
+<pre class="variable">full_steps_per_rotation</pre>
+<br><br>
+
+Microsteps of your motor driver: (Most common is 16) <br>
+<input [(ngModel)]="microsteps" placeholder="Whole number, eg.: 16" />
+<pre class="variable">microsteps</pre>
+<br><br>
+
+ESteps/mm that were saved in your Marlin's configs: <br>
+<input [(ngModel)]="steps_per_mm" placeholder="With decimals, eg.: 18.5" />
+<pre class="variable">steps_per_mm</pre>
+<br><br>
+
+<button type="button" (click)="calculateRotationDistanceFromStepsPerMm()">Calculate rotation_distance from steps_per_mm</button>
+<br><br>
+
+Final result to input in printer.cfg as your new rotation_distance: <br>
+<input [(ngModel)]="rotation_distance" placeholder="Auto-calculated value..." readonly />
+<pre class="variable">rotation_distance</pre>
