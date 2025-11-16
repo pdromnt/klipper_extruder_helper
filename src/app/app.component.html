@@ -11,17 +11,23 @@ For that please check the link above for more info!
 <button type="button" (click)="toggleStepDistanceToRotationDistance()">Convert/Calculate deprecated step_distance to new rotation_distance</button>
 <br><br>
 
-<div class="section" *ngIf="showRotationDistanceCalc" [@accordion]>
-  <app-rotation-distance-calculator></app-rotation-distance-calculator>
-</div>
+@if (showRotationDistanceCalc) {
+  <div class="section" [@accordion]>
+    <app-rotation-distance-calculator></app-rotation-distance-calculator>
+  </div>
+}
 
-<div class="section" *ngIf="showEStepConverter" [@accordion]>
-  <app-estep-rotation-distance-converter></app-estep-rotation-distance-converter>
-</div>
+@if (showEStepConverter) {
+  <div class="section" [@accordion]>
+    <app-estep-rotation-distance-converter></app-estep-rotation-distance-converter>
+  </div>
+}
 
-<div class="section" *ngIf="showStepDistanceToRotationDistance" [@accordion]>
-  <app-step-distance-to-rotation-distance></app-step-distance-to-rotation-distance>
-</div>
+@if (showStepDistanceToRotationDistance) {
+  <div class="section" [@accordion]>
+    <app-step-distance-to-rotation-distance></app-step-distance-to-rotation-distance>
+  </div>
+}
 
 <br><br>
 If in doubt, please check Klipper's docs at the top of the page! <br>
