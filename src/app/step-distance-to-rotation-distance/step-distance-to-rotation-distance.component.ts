@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-step-distance-to-rotation-distance',
-  templateUrl: './step-distance-to-rotation-distance.component.html',
-  styleUrls: ['./step-distance-to-rotation-distance.component.scss']
+    selector: 'app-step-distance-to-rotation-distance',
+    templateUrl: './step-distance-to-rotation-distance.component.html',
+    styleUrls: ['./step-distance-to-rotation-distance.component.scss'],
+    standalone: false
 })
 export class StepDistanceToRotationDistanceComponent implements OnInit {
 

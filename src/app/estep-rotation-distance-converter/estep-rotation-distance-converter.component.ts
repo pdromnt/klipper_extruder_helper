@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-estep-rotation-distance-converter',
-  templateUrl: './estep-rotation-distance-converter.component.html',
-  styleUrls: ['./estep-rotation-distance-converter.component.scss']
+    selector: 'app-estep-rotation-distance-converter',
+    templateUrl: './estep-rotation-distance-converter.component.html',
+    styleUrls: ['./estep-rotation-distance-converter.component.scss'],
+    standalone: false
 })
 export class EstepRotationDistanceConverterComponent implements OnInit {
 

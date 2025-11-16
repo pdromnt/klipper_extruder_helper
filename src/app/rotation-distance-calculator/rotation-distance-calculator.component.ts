@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-rotation-distance-calculator',
-  templateUrl: './rotation-distance-calculator.component.html',
-  styleUrls: ['./rotation-distance-calculator.component.scss']
+    selector: 'app-rotation-distance-calculator',
+    templateUrl: './rotation-distance-calculator.component.html',
+    styleUrls: ['./rotation-distance-calculator.component.scss'],
+    standalone: false
 })
 export class RotationDistanceCalculatorComponent implements OnInit {
 
