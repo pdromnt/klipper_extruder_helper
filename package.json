@@ -1,31 +1,25 @@
 {
   "name": "klipper-extruder-helper",
-  "version": "0.0.4",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve --open",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "build:subfolder": "ng build --base-href=\"/klipper_extruder_helper/\" --configuration production"
-  },
   "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview"
+  },
   "dependencies": {
-    "@angular/animations": "^20.3.12",
-    "@angular/common": "^20.3.12",
-    "@angular/compiler": "^20.3.12",
-    "@angular/core": "^20.3.12",
-    "@angular/forms": "^20.3.12",
-    "@angular/platform-browser": "^20.3.12",
-    "@angular/platform-browser-dynamic": "^20.3.12",
-    "@angular/router": "^20.3.12",
-    "rxjs": "~7.5.0",
-    "tslib": "^2.3.0",
-    "zone.js": "~0.15.1"
+    "@tailwindcss/vite": "^4.1.18",
+    "daisyui": "^5.5.14",
+    "tailwindcss": "^4.1.18",
+    "vue": "^3.5.24"
   },
   "devDependencies": {
-    "@angular/build": "^20.3.10",
-    "@angular/cli": "~20.3.10",
-    "@angular/compiler-cli": "^20.3.12",
-    "typescript": "~5.8.3"
+    "@types/node": "^24.10.1",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "@vue/tsconfig": "^0.8.1",
+    "typescript": "~5.9.3",
+    "vite": "^7.2.4",
+    "vue-tsc": "^3.1.4"
   }
 }

@@ -1,23 +1,29 @@
-# KlipperExtruderHelper
+# Klipper Extruder Helper
 
-This thing was made with [Angular](https://github.com/angular/angular-cli), and I heavily regret it.
+A helper tool for calibrating Klipper extruder settings. Rebuilt with Vue 3, Tailwind CSS 4, and DaisyUI 5.
 
-## Development server
+## Features
 
-Run `npm start` for a dev server.  
-It'll automatically open a page on `http://localhost:4200/`.  
-The application will automatically reload if you change any of the source files.
+- **Rotation Distance Calculator**: Guided step-by-step process to calibrate your extruder's rotation distance.
+- **E-Steps Converter**: Convert Marlin's `steps_per_mm` to Klipper's `rotation_distance`.
+- **Step Distance Converter**: Convert deprecated `step_distance` to `rotation_distance`.
 
-## Build
+## Development
 
-Run `npm run build` to build the project.  
-The build artifacts will be stored in the `dist/` directory.  
-If running from a subfolder, run `npm run build:subfolder`.  
-Remember to edit on package.json what subfolder you'll want it to run from.
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-## Contributing
+2. Start development server:
+   ```bash
+   npm run dev
+   ```
 
-No.
+3. Build for production:
+   ```bash
+   npm run build
+   ```
 
 ## License
 
