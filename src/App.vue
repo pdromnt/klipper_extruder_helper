@@ -79,8 +79,8 @@ const tabs = [
     <!-- Footer -->
     <footer class="footer footer-center p-4 bg-base-300 text-base-content">
       <aside>
-        <p>Built with Vue 3, Tailwind 4 & DaisyUI 5 - UNLICENSE - Built by <a
-            href="https://github.com/pdromnt/klipper_extruder_helper" target="_blank">pdromnt</a></p>
+        <p>Built with Vue 3, Tailwind 4 & DaisyUI 5 - <a class="link" href="https://unlicense.org"
+            target="_blank">UNLICENSE</a></p>
       </aside>
     </footer>
   </div>
