@@ -52,19 +52,12 @@ const tabs = [
       </div>
 
       <!-- Tabs -->
-      <div role="tablist" class="tabs tabs-boxed tabs-lg justify-center mb-12 max-w-4xl mx-auto bg-base-300 p-2 rounded-box">
-        <a
-          v-for="tab in tabs"
-          :key="tab.id"
-          role="tab"
-          class="tab transition-all duration-200"
-          :class="[
-            activeTab === tab.id ? 'tab-active font-bold' : 'hover:bg-base-200/50',
-            'tooltip tooltip-bottom'
-          ]"
-          :data-tip="tab.description"
-          @click="activeTab = tab.id"
-        >
+      <div role="tablist"
+        class="tabs tabs-boxed tabs-lg justify-center mb-12 max-w-4xl mx-auto bg-base-300 p-2 rounded-box">
+        <a v-for="tab in tabs" :key="tab.id" role="tab" class="tab transition-all duration-200" :class="[
+          activeTab === tab.id ? 'tab-active font-bold' : 'hover:bg-base-200/50',
+          'tooltip tooltip-bottom'
+        ]" :data-tip="tab.description" @click="activeTab = tab.id">
           {{ tab.name }}
         </a>
       </div>
@@ -91,15 +84,3 @@ const tabs = [
     </footer>
   </div>
 </template>
-
-<style>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.3s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-</style>

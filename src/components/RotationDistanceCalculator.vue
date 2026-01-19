@@ -52,12 +52,7 @@ const copyToClipboard = (text: string) => {
 
       <!-- Stepper -->
       <ul class="steps w-full mb-8">
-        <li
-          v-for="(step, index) in steps"
-          :key="index"
-          class="step"
-          :class="{ 'step-primary': index <= currentStep }"
-        >
+        <li v-for="(step, index) in steps" :key="index" class="step" :class="{ 'step-primary': index <= currentStep }">
           {{ step }}
         </li>
       </ul>
@@ -67,7 +62,11 @@ const copyToClipboard = (text: string) => {
         <!-- Step 0: Preparation -->
         <div v-if="currentStep === 0" class="space-y-4">
           <div class="alert alert-info">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-current shrink-0 w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              class="stroke-current shrink-0 w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
             <span>LPT: Use calipers for precision. Mark your filament with a soluble marker to avoid clogs!</span>
           </div>
 
@@ -75,12 +74,8 @@ const copyToClipboard = (text: string) => {
             <label class="label">
               <span class="label-text">Distance to mark (mm)</span>
             </label>
-            <input
-              v-model="initialMarkDistance"
-              type="number"
-              placeholder="e.g. 70"
-              class="input input-bordered w-full max-w-xs"
-            />
+            <input v-model="initialMarkDistance" type="number" placeholder="e.g. 70"
+              class="input input-bordered w-full max-w-xs" />
             <label class="label">
               <span class="label-text-alt">Recommended: 70mm</span>
             </label>
@@ -90,12 +85,8 @@ const copyToClipboard = (text: string) => {
             <label class="label">
               <span class="label-text">Distance to extrude (mm)</span>
             </label>
-            <input
-              v-model="requestedExtrudeDistance"
-              type="number"
-              placeholder="e.g. 50"
-              class="input input-bordered w-full max-w-xs"
-            />
+            <input v-model="requestedExtrudeDistance" type="number" placeholder="e.g. 50"
+              class="input input-bordered w-full max-w-xs" />
             <label class="label">
               <span class="label-text-alt">Recommended: 50mm</span>
             </label>
@@ -117,7 +108,8 @@ const copyToClipboard = (text: string) => {
           </div>
 
           <p class="text-sm text-gray-500">
-            Note: G91 sets relative positioning. The second command extrudes {{ requestedExtrudeDistance }}mm at 60mm/min.
+            Note: G91 sets relative positioning. The second command extrudes {{ requestedExtrudeDistance }}mm at
+            60mm/min.
           </p>
         </div>
 
@@ -125,16 +117,15 @@ const copyToClipboard = (text: string) => {
         <div v-if="currentStep === 2" class="space-y-4">
           <div class="form-control w-full">
             <label class="label">
-              <span class="label-text">Remaining distance to mark (mm)</span>
+              <span class="label-text">Remaining distance to mark (mm):&nbsp;</span>
             </label>
-            <input
-              v-model="subsequentMarkDistance"
-              type="number"
-              placeholder="e.g. 18.5"
-              class="input input-bordered w-full max-w-xs"
-            />
+            <br>
+            <input v-model="subsequentMarkDistance" type="number" placeholder="e.g. 18.5"
+              class="input input-bordered w-full max-w-xs" />
+            <br>
             <label class="label">
-              <span class="label-text-alt">Measure the distance from the extruder entry to your mark.</span>
+              <span class="label-text-alt"><small>Measure the distance from the extruder entry to your
+                  mark.</small></span>
             </label>
           </div>
 
@@ -142,7 +133,8 @@ const copyToClipboard = (text: string) => {
             <div class="stat">
               <div class="stat-title">Actual Extruded Distance</div>
               <div class="stat-value">{{ actualExtrudeDistance.toFixed(2) }} mm</div>
-              <div class="stat-desc">Initial ({{ initialMarkDistance }}) - Remaining ({{ subsequentMarkDistance || 0 }})</div>
+              <div class="stat-desc">Initial ({{ initialMarkDistance }}) - Remaining ({{ subsequentMarkDistance || 0 }})
+              </div>
             </div>
           </div>
         </div>
@@ -151,18 +143,18 @@ const copyToClipboard = (text: string) => {
         <div v-if="currentStep === 3" class="space-y-4">
           <div class="form-control w-full">
             <label class="label">
-              <span class="label-text">Current rotation_distance in printer.cfg</span>
+              <span class="label-text">Current rotation_distance in printer.cfg:&nbsp;</span>
             </label>
-            <input
-              v-model="previousRotationDistance"
-              type="number"
-              placeholder="e.g. 32.567"
-              class="input input-bordered w-full max-w-xs"
-            />
+            <input v-model="previousRotationDistance" type="number" placeholder="e.g. 32.567"
+              class="input input-bordered w-full max-w-xs" />
           </div>
 
           <div v-if="newRotationDistance" class="alert alert-success mt-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
             <div>
               <h3 class="font-bold">New Rotation Distance</h3>
               <div class="text-xl font-mono copy-content">{{ newRotationDistance }}</div>
@@ -171,32 +163,21 @@ const copyToClipboard = (text: string) => {
           </div>
 
           <div class="mt-4">
-            <p>Formula: <span class="font-mono text-sm">({{ previousRotationDistance }} * {{ actualExtrudeDistance.toFixed(2) }}) / {{ requestedExtrudeDistance }}</span></p>
+            <p>Formula: <span class="font-mono text-sm">({{ previousRotationDistance }} * {{
+              actualExtrudeDistance.toFixed(2) }}) / {{ requestedExtrudeDistance }}</span></p>
           </div>
         </div>
       </div>
 
       <!-- Navigation Buttons -->
       <div class="card-actions justify-between mt-8">
-        <button
-          class="btn btn-neutral"
-          @click="prevStep"
-          :disabled="currentStep === 0"
-        >
+        <button class="btn btn-neutral" @click="prevStep" :disabled="currentStep === 0">
           Previous
         </button>
-        <button
-          class="btn btn-primary"
-          @click="nextStep"
-          v-if="currentStep < steps.length - 1"
-        >
+        <button class="btn btn-primary" @click="nextStep" v-if="currentStep < steps.length - 1">
           Next
         </button>
-        <button
-          class="btn btn-success"
-          disabled
-          v-else
-        >
+        <button class="btn btn-success" disabled v-else>
           Done
         </button>
       </div>

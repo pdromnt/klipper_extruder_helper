@@ -33,12 +33,7 @@ const copyToClipboard = (text: string) => {
           <label class="label">
             <span class="label-text">Stepper Degrees</span>
           </label>
-          <input
-            v-model="stepperDegrees"
-            type="number"
-            placeholder="1.8"
-            class="input input-bordered"
-          />
+          <input v-model="stepperDegrees" type="number" placeholder="1.8" class="input input-bordered" />
           <label class="label">
             <span class="label-text-alt">Usually 1.8 or 0.9</span>
           </label>
@@ -48,29 +43,19 @@ const copyToClipboard = (text: string) => {
           <label class="label">
             <span class="label-text">Microsteps</span>
           </label>
-          <input
-            v-model="microsteps"
-            type="number"
-            placeholder="16"
-            class="input input-bordered"
-          />
+          <input v-model="microsteps" type="number" placeholder="16" class="input input-bordered" />
           <label class="label">
             <span class="label-text-alt">Usually 16 or 32</span>
           </label>
         </div>
 
-        <div class="form-control md:col-span-2">
+        <div class="form-control">
           <label class="label">
             <span class="label-text">Steps per mm (E-Steps)</span>
           </label>
-          <input
-            v-model="stepsPerMm"
-            type="number"
-            placeholder="e.g. 93"
-            class="input input-bordered"
-          />
+          <input v-model="stepsPerMm" type="number" placeholder="e.g. 93" class="input input-bordered" />
           <label class="label">
-            <span class="label-text-alt">Value from Marlin config</span>
+            <span class="label-text-alt"><small>Grab this value from your Marlin config</small></span>
           </label>
         </div>
 

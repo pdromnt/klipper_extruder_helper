@@ -25,7 +25,7 @@ const copyToClipboard = (text: string) => {
   <div class="card bg-base-100 shadow-xl max-w-2xl mx-auto">
     <div class="card-body">
       <h2 class="card-title justify-center mb-4">Step Distance to Rotation Distance</h2>
-      <p class="text-center mb-6">Convert deprecated Klipper step_distance to new rotation_distance.</p>
+      <p class="text-center mb-6">Convert deprecated Klipper step_distance to rotation_distance.</p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
@@ -33,38 +33,29 @@ const copyToClipboard = (text: string) => {
           <label class="label">
             <span class="label-text">Stepper Degrees</span>
           </label>
-          <input
-            v-model="stepperDegrees"
-            type="number"
-            placeholder="1.8"
-            class="input input-bordered"
-          />
+          <input v-model="stepperDegrees" type="number" placeholder="1.8" class="input input-bordered" />
+          <label class="label">
+            <span class="label-text-alt">Usually 1.8 or 0.9</span>
+          </label>
         </div>
 
         <div class="form-control">
           <label class="label">
             <span class="label-text">Microsteps</span>
           </label>
-          <input
-            v-model="microsteps"
-            type="number"
-            placeholder="16"
-            class="input input-bordered"
-          />
+          <input v-model="microsteps" type="number" placeholder="16" class="input input-bordered" />
+          <label class="label">
+            <span class="label-text-alt">Usually 16 or 32</span>
+          </label>
         </div>
 
-        <div class="form-control md:col-span-2">
+        <div class="form-control">
           <label class="label">
             <span class="label-text">Step Distance</span>
           </label>
-          <input
-            v-model="stepDistance"
-            type="number"
-            placeholder="e.g. 0.01075"
-            class="input input-bordered"
-          />
+          <input v-model="stepDistance" type="number" placeholder="e.g. 0.01075" class="input input-bordered" />
           <label class="label">
-            <span class="label-text-alt">Old Klipper config value</span>
+            <span class="label-text-alt"><small>Your old step_distance value</small></span>
           </label>
         </div>
 
